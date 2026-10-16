@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>oalexvini · PC e games</title>
+<meta name="description" content="Canal de PC e games do Alex: testes, builds, otimização, opinião sincera sobre jogos e o grupo de ofertas Drops do Dia.">
+<meta name="theme-color" content="#0B0D14">
+<meta property="og:title" content="oalexvini · PC e games">
+<meta property="og:description" content="Bora testar. Bora jogar.">
+<meta property="og:image" content="https://oalexvini.github.io/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Silkscreen:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* ===== cores da marca ===== */
+  :root {
+    --fundo: #0B0D14; --painel: #141824; --linha: #252B3B; --cinza: #8A93A8; --texto: #E8EBF2;
+    --vermelho: #FF2D55; --roxo: #9B5CFF; --ouro: #FFB020; --ciano: #3FD6E8;
+    --canto: polygon(0 8px,4px 8px,4px 4px,8px 4px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 4px) calc(100% - 8px),calc(100% - 4px) calc(100% - 4px),calc(100% - 8px) calc(100% - 4px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 8px),0 calc(100% - 8px));
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--fundo); }
+  body {
+    margin: 0; min-height: 100vh; color: var(--texto); font-family: 'JetBrains Mono', monospace;
+    background-color: var(--fundo);
+    background-image: linear-gradient(rgba(155,92,255,.10) 2px, transparent 2px), linear-gradient(90deg, rgba(155,92,255,.10) 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+  main { max-width: 480px; margin: 0 auto; padding: 48px 16px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+
+  .avatar { background: var(--vermelho); padding: 6px; clip-path: var(--canto); }
+  .avatar img { display: block; width: 132px; height: 132px; clip-path: var(--canto); }
+  .letreiro { width: min(300px, 80vw); height: auto; display: block; }
+  .frase { font-family: 'Jersey 10', sans-serif; font-size: 34px; line-height: 1; margin: -6px 0 6px; text-align: center; }
+  .frase span { color: var(--vermelho); }
+
+  ul { list-style: none; margin: 0; padding: 0; width: 100%; display: flex; flex-direction: column; gap: 14px; }
+  .botao { display: block; text-decoration: none; color: inherit; filter: drop-shadow(4px 4px 0 var(--linha)); transition: transform .08s steps(2), filter .08s steps(2); }
+  .caixa { display: block; padding: 4px; background: var(--texto); clip-path: var(--canto); }
+  .dentro { display: flex; align-items: center; gap: 14px; padding: 14px 16px; min-height: 64px; background: var(--painel); clip-path: var(--canto); }
+  .icone { flex-shrink: 0; display: flex; }
+  .texto { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0; }
+  .texto strong { font-family: Silkscreen, monospace; font-size: 16px; font-weight: 700; letter-spacing: .02em; }
+  .texto small { font-size: 13px; color: var(--cinza); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .seta { font-family: Silkscreen, monospace; font-size: 14px; color: var(--cinza); }
+
+  .destaque { filter: drop-shadow(4px 4px 0 var(--roxo)); }
+  .destaque .caixa, .destaque .dentro { background: var(--vermelho); color: var(--fundo); }
+  .destaque .texto small, .destaque .seta { color: var(--fundo); }
+  .drop .caixa { background: var(--ouro); }
+
+  .botao:hover, .botao:focus-visible { transform: translate(2px, 2px); filter: drop-shadow(2px 2px 0 var(--linha)); outline: none; }
+  .destaque:hover, .destaque:focus-visible { filter: drop-shadow(2px 2px 0 var(--roxo)); }
+  .botao:focus-visible .caixa { background: var(--ciano); }
+
+  footer { margin-top: 10px; text-align: center; font-size: 12px; line-height: 1.6; color: var(--cinza); }
+  footer b { font-family: Silkscreen, monospace; font-weight: 400; color: var(--texto); }
+  @media (prefers-reduced-motion: reduce) { .botao { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="avatar"><img src="avatar.svg" alt="Avatar em pixel art do Alex" width="132" height="132"></div>
+
+  <h1 style="margin:0">
+    <svg class="letreiro" viewBox="0 0 60 11" shape-rendering="crispEdges" role="img" aria-label="oalexvini"><path fill="#FF2D55" transform="translate(1 1)" d="M16 0 18 0 18 8 19 8 19 10 17 10 17 9 16 9ZM45 0 47 0 47 2 45 2ZM57 0 59 0 59 2 57 2ZM1 3 5 3 5 4 6 4 6 9 5 9 5 10 1 10 1 9 0 9 0 4 1 4ZM9 3 13 3 13 4 14 4 14 10 9 10 9 9 8 9 8 6 9 6 9 5 12 5 12 4 9 4ZM22 3 26 3 26 4 27 4 27 7 23 7 23 8 27 8 27 10 22 10 22 9 21 9 21 4 22 4ZM29 3 31 3 31 5 33 5 33 3 35 3 35 5 34 5 34 6 33 6 33 7 34 7 34 8 35 8 35 10 33 10 33 8 31 8 31 10 29 10 29 8 30 8 30 7 31 7 31 6 30 6 30 5 29 5ZM37 3 39 3 39 7 41 7 41 3 43 3 43 7 42 7 42 9 41 9 41 10 39 10 39 9 38 9 38 7 37 7ZM45 3 47 3 47 10 45 10ZM49 3 54 3 54 4 55 4 55 10 53 10 53 5 51 5 51 10 49 10ZM57 3 59 3 59 10 57 10ZM2 5 2 8 4 8 4 5ZM23 5 23 6 25 6 25 5ZM10 7 10 8 12 8 12 7Z"/><path fill="#E8EBF2" d="M16 0 18 0 18 8 19 8 19 10 17 10 17 9 16 9ZM45 0 47 0 47 2 45 2ZM57 0 59 0 59 2 57 2ZM1 3 5 3 5 4 6 4 6 9 5 9 5 10 1 10 1 9 0 9 0 4 1 4ZM9 3 13 3 13 4 14 4 14 10 9 10 9 9 8 9 8 6 9 6 9 5 12 5 12 4 9 4ZM22 3 26 3 26 4 27 4 27 7 23 7 23 8 27 8 27 10 22 10 22 9 21 9 21 4 22 4ZM29 3 31 3 31 5 33 5 33 3 35 3 35 5 34 5 34 6 33 6 33 7 34 7 34 8 35 8 35 10 33 10 33 8 31 8 31 10 29 10 29 8 30 8 30 7 31 7 31 6 30 6 30 5 29 5ZM37 3 39 3 39 7 41 7 41 3 43 3 43 7 42 7 42 9 41 9 41 10 39 10 39 9 38 9 38 7 37 7ZM45 3 47 3 47 10 45 10ZM49 3 54 3 54 4 55 4 55 10 53 10 53 5 51 5 51 10 49 10ZM57 3 59 3 59 10 57 10ZM2 5 2 8 4 8 4 5ZM23 5 23 6 25 6 25 5ZM10 7 10 8 12 8 12 7Z"/></svg>
+  </h1>
+  <p class="frase">BORA TESTAR. <span>BORA JOGAR.</span></p>
+
+  <ul>
+      <li><a class="botao destaque" href="https://www.youtube.com/@oalexvini/videos" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#0B0D14"><path d="M5 2 6 2 6 3 7 3 7 4 8 4 8 5 9 5 9 6 10 6 10 7 11 7 11 9 10 9 10 10 9 10 9 11 8 11 8 12 7 12 7 13 6 13 6 14 5 14Z"/></svg></span>
+          <span class="texto"><strong>VÍDEO NOVO</strong><small>o mais recente do canal</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao " href="https://www.youtube.com/@oalexvini" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#FF2D55"><path d="M5 2 6 2 6 3 7 3 7 4 8 4 8 5 9 5 9 6 10 6 10 7 11 7 11 9 10 9 10 10 9 10 9 11 8 11 8 12 7 12 7 13 6 13 6 14 5 14Z"/></svg></span>
+          <span class="texto"><strong>YOUTUBE</strong><small>@oalexvini</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao drop" href="LINK_DO_TELEGRAM" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#FFB020"><path d="M2 3 14 3 14 4 2 4ZM2 4 2 6 14 6 14 4 15 4 15 13 1 13 1 4ZM2 7 2 12 14 12 14 7 10 7 10 10 6 10 6 7ZM7 8 7 9 9 9 9 8Z"/></svg></span>
+          <span class="texto"><strong>DROPS · TELEGRAM</strong><small>ofertas que eu garimpo todo dia</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao drop" href="LINK_DO_WHATSAPP" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#FFB020"><path d="M2 3 14 3 14 4 2 4ZM2 4 2 6 14 6 14 4 15 4 15 13 1 13 1 4ZM2 7 2 12 14 12 14 7 10 7 10 10 6 10 6 7ZM7 8 7 9 9 9 9 8Z"/></svg></span>
+          <span class="texto"><strong>DROPS · WHATSAPP</strong><small>as mesmas ofertas, no zap</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao " href="https://www.instagram.com/oalexvini" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#9B5CFF"><path d="M4 2 8 2 8 3 15 3 15 14 1 14 1 3 4 3ZM2 4 2 13 14 13 14 4ZM5 5 10 5 10 6 11 6 11 11 10 11 10 12 5 12 5 11 4 11 4 6 5 6ZM6 6 6 7 5 7 5 10 6 10 6 11 9 11 9 10 10 10 10 7 9 7 9 6ZM12 5 13 5 13 6 12 6Z"/></svg></span>
+          <span class="texto"><strong>INSTAGRAM</strong><small>@oalexvini</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao " href="https://www.tiktok.com/@oalexvini" target="_blank" rel="noopener">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#3FD6E8"><path d="M4 1 12 1 12 15 4 15ZM5 2 5 14 11 14 11 2ZM7 4 8 4 8 5 9 5 9 6 10 6 10 7 9 7 9 8 8 8 8 9 7 9ZM7 12 9 12 9 13 7 13Z"/></svg></span>
+          <span class="texto"><strong>TIKTOK</strong><small>@oalexvini</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+      <li><a class="botao " href="mailto:oalexvini@gmail.com">
+        <span class="caixa"><span class="dentro">
+          <span class="icone"><svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true" shape-rendering="crispEdges" style="fill:#E8EBF2"><path d="M1 3 15 3 15 13 1 13ZM3 4 3 5 2 5 2 12 14 12 14 5 13 5 13 4ZM3 5 4 5 4 6 3 6ZM13 5 13 6 12 6 12 5ZM4 6 5 6 5 7 4 7ZM12 6 12 7 11 7 11 6ZM5 7 6 7 6 8 5 8ZM11 7 11 8 10 8 10 7ZM6 8 7 8 7 9 6 9ZM10 8 10 9 9 9 9 8ZM7 9 9 9 9 10 7 10Z"/></svg></span>
+          <span class="texto"><strong>CONTATO</strong><small>oalexvini@gmail.com</small></span>
+          <span class="seta" aria-hidden="true">▶</span>
+        </span></span>
+      </a></li>
+  </ul>
+
+  <footer>
+    <p>Alguns links do Drops do Dia são de afiliado:<br>você paga o mesmo e ajuda o canal.</p>
+    <p><b>PROGRESSO SALVO.</b></p>
+  </footer>
+</main>
+</body>
+</html>
